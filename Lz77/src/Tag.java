@@ -1,36 +1,23 @@
 public class Tag {
-    int pos;
-    int len;
-    char n_char;
+    private int position;
+    private int length;
+    private char symbol;
 
-    public Tag(int pos, int len, char n_char) {
-        this.pos = pos;
-        this.len = len;
-        this.n_char = n_char;
-    }
-    public Tag(){}
-
-    public int getPos() {
-        return pos;
+    public Tag(int pos,int length,char symbol){
+        this.position = pos;
+        this.length = length;
+        this.symbol = symbol;
     }
 
-    public void setPos(int pos) {
-        this.pos = pos;
+    public char getSymbol() {
+        return symbol;
     }
 
-    public int getLen() {
-        return len;
+    public int getPosition() {
+        return position;
     }
 
-    public void setLen(int len) {
-        this.len = len;
-    }
-
-    public char getN_char() {
-        return n_char;
-    }
-
-    public void setN_char(char n_char) {
-        this.n_char = n_char;
+    public int getLength() {
+        return length;
     }
 }
