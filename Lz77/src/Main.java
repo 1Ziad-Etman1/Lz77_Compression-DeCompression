@@ -1,5 +1,3 @@
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.lang.String;
 import java.util.ArrayList;
 
@@ -7,16 +5,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String text = "ABAABABAABBBBBBBBBBBBA";
+        //Compression
         Compressor compressor = new Compressor();
-        System.out.println(compressor.compress(text));
-//        File readFile = new File("/z77/Lz77_Compression-DeCompression-main/Lz77/src/test.txt");
-        String filePath = "output.bin"; // Specify the path to your binary file
+        File to_compress = new File("/run/media/phantom/New Volume/University/Data Compression/Assignments/Assignment 1/Lz77_Compression-DeCompression/Lz77/src/test.txt");
+        compressor.compress();
+
+        //Decompression
+        File to_decompress = new File("/run/media/phantom/New Volume/University/Data Compression/Assignments/Assignment 1/Lz77_Compression-DeCompression/Lz77/src/output.bin");
+        ArrayList<Tag> tags = new ArrayList<Tag>();
+        tags.addAll(to_decompress.read_to_decompress());
+        Decompressor decompressor = new Decompressor(tags);
+        decompressor.decompress();
+        System.out.println(decompressor.decompressed);
+
+//        for (Tag printtag : tags){
+//            System.out.println(printtag.position+"-"+printtag.length+"-"+ printtag.symbol);
+//        }
 
     }
-    //        ArrayList<Tag> tags = new ArrayList<Tag>();
-//        tags.addAll(readFile.read());
-//        for (Tag printtag : tags){
-//            System.out.println(printtag.getPosition()+"-"+printtag.getLength()+"-"+ printtag.getSymbol());
-//        }
+
 }

@@ -1,7 +1,7 @@
 public class Tag {
-    private int position;
-    private int length;
-    private char symbol;
+    public int position;
+    public int length;
+    public char symbol;
 
     public Tag(int pos,int length,char symbol){
         this.position = pos;
